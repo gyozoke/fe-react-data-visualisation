@@ -26,7 +26,7 @@ function App() {
   return (
     <>
       <Header />
-      <MeteorSearch searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      {/* <MeteorSearch searchTerm={searchTerm} setSearchTerm={setSearchTerm} /> */}
       <MeteorList meteors={meteors} />
     </>
   );
