@@ -1,6 +1,14 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
+}
+
+
+.meteorimage {
+  width: 500px;
+  height: 250px;
+  border-radius: 5px;
+  margin-bottom: 28px;
 }

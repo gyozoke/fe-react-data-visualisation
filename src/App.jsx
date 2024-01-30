@@ -26,8 +26,9 @@ function App() {
   return (
     <>
       <Header />
-      {/* <MeteorSearch searchTerm={searchTerm} setSearchTerm={setSearchTerm} /> */}
-      <MeteorList meteors={meteors} />
+      <img className="meteorimage" src="https://thedebrief.b-cdn.net/wp-content/uploads/2022/09/interstellar-meteor.jpg" alt="Image of an asteroid in space"/>
+      <MeteorSearch searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <MeteorList meteors={meteors} searchTerm={searchTerm}/>
     </>
   );
 }

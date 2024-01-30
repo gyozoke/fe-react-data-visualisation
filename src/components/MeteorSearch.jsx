@@ -1,20 +1,21 @@
 import { useState } from "react";
+import "../MeteorList.css";
+import Expandable from "./Expandable";
 
 export default function MeteorSearch(props) {
   const [userSearch, setUsersSearch] = useState("");
-  const { searchTerm, setSearchTerm } = props;
+  const { setSearchTerm } = props;
 
   const handleSubmit = (event) => {
     event.preventDefault();
     setUsersSearch("");
     setSearchTerm(userSearch);
   };
-
+  
   return (
-    <>
-      <h2>Currently searching: {searchTerm}</h2>
+    <Expandable>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="searchTerm">Search meteors:</label>
+        <label htmlFor="searchTerm">Search meteors ID:</label>
         <input
           type="text"
           id="searchTerm"
@@ -22,9 +23,9 @@ export default function MeteorSearch(props) {
           onChange={(event) => {
             setUsersSearch(event.target.value);
           }}
-        />
-        <button>Search</button>
+          />
+        <button className="searchbutton">Search ID</button>
       </form>
-    </>
+    </Expandable>
   );
 }

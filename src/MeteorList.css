@@ -1,0 +1,30 @@
+#data-table {
+    background-color: #99A8C2;
+    width: 900px;
+    text-align: center;
+    margin-bottom: 48px;
+    
+} 
+
+.MuiDataGrid-cellContent {
+    font-size: 16px;
+    color: white;
+}
+
+.searchbutton {
+    background-color: #99A8C2;
+    font-weight: bold;
+    color: darkblue;
+}
+
+#searchTerm {
+    margin: 8px;
+    height: 36px;
+}
+
+.hidebutton {
+    background-color: #99A8C2;
+    font-weight: bold;
+    color: darkblue;
+    margin-bottom: 8px;
+}

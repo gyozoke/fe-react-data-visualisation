@@ -2,19 +2,20 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import "../MeteorList.css";
 
 export default function MeteorList(props) {
-  const { meteors } = props;
+  const { meteors, searchTerm } = props;
   const columns = [
-    { field: "id", headerName: "ID", width: 70 },
-    { field: "name", headerName: "Name", width: 130 },
-    { field: "mass", headerName: "Mass (g)", width: 130 },
-    { field: "fall", headerName: "Fall", width: 130 },
-    { field: "year", headerName: "Year", width: 130 },
-    // { field: "geolocation", headerName: "GeoLocation", width: 130 },
+    { field: "id", headerName: "ID", width: 100 },
+    { field: "name", headerName: "Name", width: 180 },
+    { field: "mass", headerName: "Mass (g)", width: 180 },
+    { field: "fall", headerName: "Fall", width: 180 },
+    { field: "year", headerName: "Year", width: 180 },
   ];
+
   return (
     <section>
       <h2>Meteor List</h2>
-      <div id="data-table" style={{ height: "100%", width: "100%" }}>
+      {searchTerm === "" ? <h3>Currently displaying all meteors</h3> : <h3>Currently displaying meteor ID: {searchTerm}</h3>} 
+      <div id="data-table">
         <DataGrid
           rows={meteors}
           columns={columns}
@@ -22,6 +23,9 @@ export default function MeteorList(props) {
             pagination: {
               paginationModel: { page: 0, pageSize: 10 },
             },
+          }}
+          filterModel={{
+            items: [{field: "id", operator: "equals", value: searchTerm }],
           }}
           slots={{ toolbar: GridToolbar }}
           pageSizeOptions={[10, 20, 50, 100]}
